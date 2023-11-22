@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            color: #DDDEE5;
+            background-color: #cfd1d9;
+            font-family: Lora, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+  
+/* NAV BAR */
+        .navbar {
+            background-color: #eddcdd;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar ul {
+            color: #703e9a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+            margin: 0;
+            padding:0;
+            width:100%;
+        }
+
+        .navbar li {
+            display: inline;
+            margin: 0 0.5em;
+            font-size: 18px;
+            padding:0;
+            white-space:nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .navbar a {
+            color: #703e9a; 
+            text-decoration: none;
+            padding: 60px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s; 
+        }
+
+        .navbar a:hover {
+            background-color: #f4eaec; 
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+/* ABOUT ME */
+        .about-me {
+            background-color: #ddd;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-top: 0px; 
+        }
+
+        .about-me p {
+            color: #7c6c73;
+            font-family: Lora, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        .about-me h1 {
+            color: #7c6c73;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+
+/* TIME LINE AND CIRCLE STYLES */
+        .timeline {
+            position: relative;
+            width: 2px;
+            background-color: #4c5068;
+            height: 600px;
+            margin-top: 150px; 
+            margin-bottom: 250px;
+            margin-right: 50%;
+            margin-left:50%;
+        }
+
+        .event {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #7c6c73; /* If you want the image to cover the whole circle, you can remove the background color */
+            position: relative;
+            top: 0;
+            margin-top: 0;
+            display: flex; /* Added to center the image */
+            align-items: center; /* Added to center the image */
+            justify-content: center; /* Added to center the image */
+        }
+
+        .circle img {
+            max-width: 70%; /* Ensure the image doesn't exceed the circle's size */
+            max-height: 70%; /* If you want the images to be circular */
+            filter: invert(90%);
+        }
+
+
+/* CONTENT CONTAINERS */
+        #event1 { top: 0%; }
+        #event2 { top: 25%; }
+        #event3 { top: 50% }
+        #event4 { top: 75% }
+        #event5 { top: 100% }
+
+        .content-right {
+            display: none;
+            position: absolute;
+            background-color: #7c6c73;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 645px;
+            top: 50%;
+            left: 120%;
+            transform: translateY(-50%);
+        }
+
+        .content-left {
+            display: none;
+            position: absolute;
+            background-color: #7c6c73;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 645px;
+            top: 50%;
+            right: 120%;
+            transform: translateY(-50%);
+        }
+
+        .content-left h1 {
+            color: #DDDEE5;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: left;
+            font-size: 14;
+        }
+
+        .content-left p {
+            color: #DDDEE5;
+            font-family: Lora, serif;
+            font size: 12;
+            font weight: 300;
+            text-align: left;
+        }
+
+        .content-right h1 {
+            color: #DDDEE5;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            text-align: left;
+            font-size: 14;
+        }
+
+        .content-right p {
+            color: #DDDEE5;
+            font-family: Lora, serif;
+            font size: 12;
+            font weight: 300;
+            text-align: left;
+        }
+
+        .circle:hover + .content-right, .content:hover {
+            display: block;
+        }
+        
+        .circle:hover +.content-left, .content:hover {
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            .content-right {
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .content-left{
+                left:0;
+                right:0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
+    </div>
+    <div class="about-me">
+        <h1>Hover over the icons if you would like to learn a little bit more about me!</h1>
+    </div>
+    <div class="timeline">
+        <div class="event" id="event1">
+            <div class="circle">
+                <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/me-icon.png" alt="My Philosophy">
+            </div>
+            <div class="content-left">
+                <h1>My Philosophy</h1>
+                <p>I am firmly committed to applying my leadership skills, work ethic, and effective communication into my career and life with the aim of making a significant difference in the world. Believing that even the smallest actions can lead to transformative change, I aspire to apply these principles in both professional and personal contexts. My goal is to create a ripple effect of positive impact, whether through innovative projects, community engagement, or personal interactions, all while upholding a philosophy of change and progress for the betterment of society.</p>
+            </div>
+        </div>
+        <div class="event" id="event2">
+            <div class="circle">
+                <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/soccer-icon.png" alt="Playing Soccer">
+            </div>    
+            <div class="content-right">
+                <h1>Playing Soccer</h1>
+                <p>As soon as I learned how to walk, I had a soccer ball at my feet. Between the ages of 6 and 18, I played competitively in Southern California. I grew up dedicating so much time to the sport and absolutely fell in love with the game. Through soccer, I learned invaluable lessons about teamwork, resilience, and leadership. On the field, I took pride in being a compassionate leader who supported my team with empathy and understanding. This journey profoundly shaped my leadership abilities and personal growth.</p>
+            </div>  
+        </div>
+        <div class="event" id="event3">
+            <div class="circle">
+                <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/whistle-icon.png" alt="Coaching Soccer">
+            </div>
+            <div class="content-left">
+                <h1>Coaching Soccer</h1>
+                <p>At 14, I started to coach soccer. I began coaching private training sessions for kids aged 4-8. In 2021, I was able to coach the girls varsity team at Vistamar High School. These experiences, spanning from private sessions to team coaching, taught me invaluable lessons in patience, adaptability, and effective communication. These experiences shaped me into not just a leader who strives for victory, but one who ensures every member feels heard and supported.</p>
+            </div>
+        </div>
+        <div class="event" id="event4">
+            <div class="circle">
+                <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/mental+health-icon.png" alt="Mental Health">
+            </div>
+            <div class="content-right">
+                <h1>Mental Health</h1>
+                <p>I've always been deeply passionate about mental health, driven by a deep understanding of its importance in our lives. My interest was ignited by personal experiences and observations, leading me to actively seek knowledge and engage in conversations about mental well-being. This passion has motivated me to advocate for greater awareness and support systems in my community. I'm committed to breaking the stigma surrounding mental health and encouraging open, supportive dialogues to foster a more understanding and compassionate society.</p>
+            </div>
+        </div>
+        <div class="event" id="event5">
+            <div class="circle">
+                <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/icons8-courthouse-50.png" alt="Social Justice">
+            </div>
+            <div class="content-left">
+                <h1>Social Justice / Volunteering</h1>
+                <p>My volunteer experiences have been deeply enriching and diverse, and have sparked my passion for community service. At a daycare center called KidsWorks in Santa Ana, I engaged with children from economically challenged communities. I provided them with care and activities to ensure a safe environment for development. My journey also took me to Tijuana, where I spoke (very broken) Spanish with deportees and immigrants, serving them dinner and connecting with them about their complex experiences. Although these are just a couple of examples, I can confidently say that all of my experiences have been instrumental in shaping my understanding of diverse community needs and the power of compassionate service.</p>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            color: #DDDEE5;
+            background-color: #cfd1d9;
+            font-family: Lora, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+
+        .skill-set li:hover {
+            background: #7C8594;
+        }
+
+        h1 {
+            color: #C3C3C3;
+        }
+
+        .wrapper {
+            height: 100%;
+        }
+
+/* TEXT STYLES */
+        
+        ul {
+            margin:15 px;
+            max-width: 570px;
+            padding-left:10px;
+            padding-right:15px;
+            padding-bottom:10px;
+        }
+
+        li {
+            list-style-type:disc;
+            margin-right:-200;
+            margin-left: 35px;
+            margin-top:10px;
+            font-size: 16px;
+        }
+
+
+/* SKILLS */
+
+
+        @media screen and (max-width: 48em) {
+            .right, .left {
+                float: none;
+                position: relative !important;
+                width: 100%;
+                min-height: 500px;
+            }
+            .handmade {
+                text-align: center !important;
+                margin-top: 0px !important;
+            }
+        }
+
+        @media screen and (max-width: 75em) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 60em) {
+            body {
+                font-size: 14px;
+            }
+        }
+        .clearfix:after {
+            content: " ";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+/* NAV BAR */
+
+        .navbar {
+            background-color: #eddcdd;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar ul {
+            color: #703e9a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+            margin: 0;
+            padding:0;
+            width:100%;
+        }
+
+        .navbar li {
+            display: inline;
+            margin: 0 0.5em;
+            font-size: 18px;
+            padding:0;
+            white-space:nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .navbar a {
+            color: #703e9a; 
+            text-decoration: none;
+            padding: 60px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s; 
+        }
+
+        .navbar a:hover {
+            background-color: #f4eaec; 
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+/* PROJECT GRID */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; 
+        }
+
+        .content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%; 
+        }
+
+        .project {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden;
+        }
+        
+        .project img {
+            width: 100%; 
+            height: auto; 
+            object-fit: cover; 
+            max-height: 200px; 
+        }
+
+        .project:hover img {
+            transform: scale(1.1);
+        }
+        .project-grid .project {
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .project-grid .project:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-grid .project img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+/* MODALS */
+
+        .modal .project, .modal .project img {
+            transform: none;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #eddcdd;
+            margin: 0 auto;
+            padding:10px;
+            border: 1px solid #eddcdd;
+            width: 60%;
+            overflow-y: auto;
+            color: #eddcdd;
+            overflow-x: hidden;
+        }
+
+        .modal-content h2 {
+            color: #7c6c73;
+            font-size: 24px;
+            margin-left: 10px;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .modal-content h3 {
+            color: #7c6c73;
+            font-size: 18px;
+            padding-bottom: 16px;
+            margin-left: 10px;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .modal-content p {
+            color: #4c5068;
+            font-size: 16px;
+            font-family: 'Lora', serif;
+            margin-right:-220px;
+            margin-left:10px;
+            padding: 0;
+        }
+        
+        .modal-content li {
+            color: #4c5068;
+            font-family: 'Lora', serif;
+            font-size: 16px;
+            margin-right:-200px;
+            margin-left: 10px;
+            padding:0;
+        }
+
+        .modal-content .indent li {
+            padding:0;
+            margin-right:-200px;
+            font-family: 'Lora', serif;
+            margin-left:35px;
+            color: #4c5068;
+        }
+
+        .modal-content .indent ul {
+            margin-right: -200px;
+            font-family: 'Lora', serif;
+            margin-left:10px;
+        }
+
+        .modal-content .indent:first-child {
+            margin-left:10px;
+            margin-right: -200px;
+        }
+
+        .modal-image-container {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin:0;
+            padding: 0;
+        }
+
+        .modal-image-container img {
+            width: 100%; 
+            max-width: 100%; 
+            display: block; 
+            margin:auto;  
+            align-items: center;    
+            padding: 10px;   
+            box-sizing: border-box;
+        }
+
+        .modal-divider {
+            border: 0; 
+            height: 1px; 
+            background-color:#7a6c73; 
+            width: 100%; 
+        }
+
+        .modal-heading-link {
+            color: #7a6c73;
+            text-decoration: underline; 
+            font-weight: bold; 
+            margin:10px;
+        }
+
+        .modal:target {
+            display: block;
+        }
+
+        .image-with-caption {
+            width: 100%; 
+            box-sizing: border-box;
+            margin-right:-220px;
+            padding: 0;
+        }
+
+        .image-with-caption img {
+            width: 100%; 
+            height: auto; 
+            display: block;
+            margin: 0 auto; 
+            padding: 0;
+        }
+
+        .image-caption {
+            color: #4c5068;
+            font-family: Lora, serif;
+            font-size: 18px;
+            line-height: 1.4;
+            text-align: left;
+            border: 0; 
+            margin-right:-220px;
+            margin-left:10px;
+            padding: 0;
+        }
+
+        .caption-divider {
+            border: 0; 
+            height: 1px; 
+            background-color: #7a6c73; 
+            width: 100%; 
+        }
+
+        .close {
+            color: #ba5eaf;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        .close:hover, .close:focus {
+            color: #aaaaaa;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="bio.html">About Me</a></li>
+        </ul>
+    </div>
+    <div class="content-wrapper">
+        <div class="project-grid">
+            <div class="project" >
+                <a href="#modalCloudResumeChallenge">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/cloud_resume_challenge_project_cover.jpg" alt="Cloud Resume Challenge">
+                </a>
+            </div>
+            <div class="project">
+                <a href="#modalTravelAgency">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/travel_agency_project_cover.jpg" alt="Travel Agency">
+                </a>
+            </div>
+            <div class="project">
+                <a href="#modalNetworkConfig">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/network_config_project_cover.jpg" alt="Network Configuration">
+                </a>
+            </div>
+            <div class="project">
+                <a href="#modalMSDatabase">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/college_student_info_db_project_cover.jpg" alt="College Information Database">
+                </a>
+            </div>
+            <div class="project">
+                <a href="#modalRealEstate">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/real_estate_project_cover.jpg" alt="Real Estate Data Analysis">
+                </a>
+            </div>
+            <div class="project">
+                <a href="#modalSephoraProject">
+                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/sephora_marketing_research_project_cover.jpg" alt="Sephora Marketing Research">
+                </a>
+            </div>
+        </div>
+    
+
+<!-- CLOUD RESUME -->
+
+        <div id="modalCloudResumeChallenge" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><strong>Cloud Resume Challenge</strong></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Full-stack web development</li>
+                    <li>Cloud services management</li>
+                    <li>Secure web protocols</li>
+                    <li>Infrastructure as code</li>
+                    <li>Continuous integration and delivery</li>
+                    <li>Version control and documentation</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>HTML, CSS, JavaScript, AWS, Python, Terraform, GitHub</p>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Project Description:</h3>
+                <ul>
+                    <p>Engaged in the Cloud Resume Challenge to develop and demonstrate skills in full-stack software development, cloud services, and CI/CD pipelines. The project encompassed building a cloud-hosted resume website, integrating backend services, and automating deployment processes.</p>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Key Features:</h3>
+                    <li class="indent:firstchild">Frontend Development:</li>
+                    <ul class="indent">
+                        <li>Designed and coded a personal resume using HTML and CSS.</li>
+                        <li>Deployed the website as a static S3 site on AWS.</li>
+                        <li>Implemented HTTPS using AWS CloudFront for secure access.</li>
+                        <li>Configured custom DNS using AWS Route 53 and Namecheap for a personalized domain.</li>
+                    </ul>
+                    <li class="indent:firstchild">Backend API Integration:</li>
+                    <ul class="indent">
+                        <li>Developed a visitor counter feature using JavaScript, AWS Lambda (Python), and API Gateway.</li>
+                        <li>Set up and managed a NoSQL database (AWS DynamoDB) for storing visitor counts.</li>
+                    </ul>
+                    <li class="indent:firstchild">CI/CD and Automation:</li>
+                    <ul class="indent">
+                        <li>Utilized Terraform for infrastructure as code, automating the setup of AWS services.</li>
+                        <li>Established source control for backend (Python, Terraform) and frontend (HTML, CSS, JS) using GitHub repositories.</li>
+                        <li>Implemented CI/CD pipelines using GitHub Actions for automatic updates upon code changes.</li>
+                    </ul>
+                    <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>This project showcased my ability to integrate a static website with a serverless backend, manage a NoSQL database, and automate deployment processes (and this pretty cool website).</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <!-- TRAVEL AGENCY -->
+        <div id="modalTravelAgency" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><a href="https://drive.google.com/drive/folders/15QLJ4iqK0q63dJ0C5C1LVZ0wstov7FXT?usp=drive_link" class="modal-heading-link">Travel Agency Data Visualization</a></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Advanced data analysis and visualization</li>
+                    <li>Strategic thinking and business insight</li>
+                    <li>Effective communication and report writing</li>
+                    <li>Problem-solving and critical thinking</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>Tableau</p>
+                </ul>
+                <hr class="modal-divider">
+                    <h3>Project Description:</h3>
+                <ul>
+                    <p>Conducted a detailed customer analysis for a travel agency using Tableau and prepared an in-depth report with business recommendations. This project aimed to identify key customer trends and provide actionable insights to enhance the agency's services and marketing strategies.</p>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>Data Analysis: Analyzed customer data to identify trends in travel preferences, booking patterns, and demographic distributions. Utilized Tableau to create visual representations of data, making complex information easily understandable.</li>
+                    <li>Report Creation: Compiled findings into a comprehensive report, detailing customer behaviors and preferences. The report included visualizations and easy-to-understand narratives to convey insights effectively.</li>
+                    <li>Business Recommendations: Provided strategic recommendations based on data analysis. Suggestions included targeted marketing strategies, service improvement ideas, and potential new travel packages to meet customer demands.</li>    
+                </ul>
+                <hr class="modal-divider">
+                <h3>Preview:</h3>
+                <div class="image-with-caption">
+                    <p class="image-caption">Customer Analysis</p>
+                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/customer_inquiry.jpg" alt="Customer Analysis">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Standard Package Insight</p>
+                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/standard_family_status.jpg" alt="Standard Analysis">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Deluxe Package Insight</p>
+                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/deluxe_living.jpg" alt="Standard Analysis">
+                </div>
+                <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>The project delivered actionable insights that would enable the travel agency to tailor its services more effectively to customer preferences, leading to improved customer satisfaction and increased sales. The recommendations provided a roadmap for future growth and customer engagement strategies.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- NETWORK CONFIG -->
+        <div id="modalNetworkConfig" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><a href="https://drive.google.com/file/d/1Ib15rrNCr2Fjdr0Fdgh77YEYudvsHg3G/view?usp=sharing" class="modal-heading-link">Network Configuration</a></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Subnetting</li>
+                    <li>DNS server configuration</li>
+                    <li>Inter-network communication</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>Cisco Packet Tracer</p>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Project Description:</h3>
+                <ul>
+                    <p>This project showcases the setup and configuration of a LAN over two distinct subnets using Cisco Packet Tracer. It features a recursive DNS server in one subnet and an authoritative DNS server in the other, supporting domain name resolution for web server access.</p>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Key Features:</h3>
+                <ul>
+                    <li class="indent:firstchild">Network Architecture:</li>
+                    <ul class="indent">
+                        <li>Subnet 1 Configuration: Includes PCs connected to a switch and a recursive DNS server, linked to a router. </li>
+                        <li>Subnet 2 Configuration: Hosts a web server, an authoritative DNS server for 'www.lmuisbasociety.com', and an additional server, all interconnected via a router.</li>
+                        <li class="indent:firstchild">Recursive DNS Server</li>
+                    </ul>
+                    <li class="indent:firstchild">Functionality:</li>
+                    <ul class="indent">
+                        <li>Configured to handle DNS queries from PCs in Subnet 1.</li>
+                        <li>Purpose: Ensures efficient domain name resolution for client PCs.</li>
+                    </ul>
+                    <li class="indent:firstchild">Authoritative DNS Server and Web Server:</li>
+                    <ul class="indent">Authoritative DNS Server and Web Server:>
+                        <li>Role of Authoritative DNS Server: Manages DNS records for the domain 'www.lmuisbasociety.com'.</li>
+                        <li>Web Server Accessibility: Set up in Subnet 2 and accessible from PCs across the subnets.</li>
+                    </ul>
+                    <li class="indent:firstchild">Connectivity and Testing:</li>
+                    <ul class="indent"></ul>
+                        <li>Router Setup: Ensures communication between the two subnets.</li>
+                        <li>Testing: Verification of domain name resolution and web server accessibility from Subnet 1.</li>
+                    </ul>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Preview:</h3>
+                <div class="image-with-caption">
+                    <p class="image-caption">Network Overview</p>
+                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/full_network_view.jpg" alt="Network Overview">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">DNS Resolution Aross Two Subnets</p>
+                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/dns_resolution_photo.jpg" alt="DNS Resolution">
+                </div>
+                <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>Successfully created a simulated network that mirrored a real-world LAN environment. The project demonstrated a clear understanding of networking concepts and practical skills in network design and management.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- MS DATA BASE -->
+        <div id="modalMSDatabase" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><a href="https://drive.google.com/file/d/1BdfM-Cgg9O2CsmM2G3GL_mUUyhm-x89s/view?usp=drive_link" class="modal-heading-link">College Information Database</a></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Database design and normalization</li>
+                    <li>User interface design</li>
+                    <li>Data analysis and reporting</li>
+                    <li>Problem-solving and logical thinking</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>Microsoft Access</p>
+                </ul>
+                <hr class="modal-divider">
+                <ul>
+                    <h3>Project Description:</h3>
+                    <p>Developed a comprehensive database system using Microsoft Access to manage and streamline college information. This system is designed to provide a centralized platform for storing, retrieving, and managing data related to various aspects of college operations.</p>
+                </ul>
+                    <hr class="modal-divider">
+                    <h3>Key Features:</h3>
+                <ul>
+                    <li>Tables: Created multiple relational tables to store data about students, faculty, courses, departments, and events. These tables are interconnected to ensure data integrity and enable efficient data management. </li>
+                    <li>Forms: Designed user-friendly forms for data entry and editing. These forms simplify the process of adding and updating information in the database, making it accessible to non-technical users.</li>
+                    <li>Queries: Utilized queries to retrieve specific data from the database. Developed both simple and complex queries to generate reports, analyze trends, and support decision-making processes.</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Preview:</h3>
+                <div class="image-with-caption">
+                    <p class="image-caption">Student Information Form</p>
+                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/student_information_form.jpg" alt="Student Info Form">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Grade Entry Form</p>
+                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/grades_entry_form.jpg" alt="Grade Entry Form">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Student Information Table</p>
+                    <img class="image-with-caption"> <img src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/student_information_table.jpg" alt="Student Info Table">
+                </div>
+                <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>The system significantly improved data organization and accessibility, leading to more efficient college administration processes. It also provided a reliable platform for data analysis and reporting, enhancing the institution's ability to make informed decisions.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- REAL ESTATE -->
+        <div id="modalRealEstate" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><a href="https://docs.google.com/document/d/1q6iLs9RSeIaL3Qf3cxTMclPDWGaVyr7QM3aRP3zlFn8/edit?usp=sharing" class="modal-heading-link">Real Estate Statistical Data Analysis</a></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Data Analysis and Interpretation (handling large datasets and extracting meaningful insights.)</li>
+                    <li>User interface design</li>
+                    <li>Data analysis and reporting</li>
+                    <li>Problem-solving and logical thinking</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>Regressional Analysis, Pivot Tables, Excel</p>
+                </ul>
+                <hr class="modal-divider">
+                <ul>
+                    <h3>Project Description:</h3>
+                    <p>Developed an extensive analytical report using Microsoft Excel to analyze a large dataset of real estate properties in Los Angeles. This project involved in-depth data analysis to extract insights and trends within the Los Angeles real estate market, aiding in informed decision-making for potential investors and stakeholders.</p>
+                </ul>
+                    <hr class="modal-divider">
+                    <h3>Key Features:</h3>
+                <ul>
+                    <li>Data Collection and Organization: Acquired and organized a comprehensive dataset of real estate listings, including variables like price, location, size, and amenities.</li>
+                    <li>Data Analysis: Employed advanced Excel functions and techniques to analyze the dataset. Performed statistical analysis, trend identification, and comparative studies of various real estate properties and market segments.</li>
+                    <li>Visualization: Created a range of charts to represent data findings effectively, making complex data easily interpretable.</li>
+                    <li>Report Writing: Compiled the analysis into a detailed report, presenting key findings, patterns, and anomalies in the Los Angeles real estate market.</li>
+                    <li>Market Insights and Predictions: Provided valuable insights on market trends, pricing patterns, and potential investment opportunities. Also included predictive analysis for future market developments based on historical data trends.</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Preview:</h3>
+                <div class="image-with-caption">
+                    <p class="image-caption">Multi Regression</p>
+                    <img class="image-with-caption"  src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/multi_regression.jpg" alt="Multi Regression">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Pivot Table</p>
+                    <img class="image-with-caption"  src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/pivot_table.jpg" alt="Grade Entry Form">
+                </div>
+                <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>The report delivered a comprehensive overview of the Los Angeles real estate market, offering valuable insights for realtors, investors, and market analysts. It facilitated data-driven decision-making and strategy formulation in the real estate sector.</p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    <!-- SEPHORA -->
+        <div id="modalSephoraProject" class="modal">
+            <div class="modal-content">
+                <a href="#" class="close">&times;</a>
+                <h2><a href="https://drive.google.com/file/d/1Pjbzyrh9fU7EGe16f_ydA6LWZynTYFwn/view?usp=sharing" class="modal-heading-link">Sephora Customer Insight Survey</a></h2>
+                <hr class="modal-divider">
+                <h3>Key Skills Used:</h3>
+                <ul>
+                    <li>Market research and analysis</li>
+                    <li>Survey design and implementation</li>
+                    <li>Data collection and analysis</li>
+                    <li>Strategic thinking and business acumen</li>
+                    <li>Effective communication and reporting</li>
+                </ul>
+                <hr class="modal-divider">
+                <h3>Tools Used:</h3>
+                <ul>
+                    <p>Qualtrics</p>
+                </ul>
+                <hr class="modal-divider">
+                <ul>
+                    <h3>Project Description:</h3>
+                    <p>Conducted a comprehensive marketing research survey using Qualtrics to gather valuable customer insights for Sephora. The primary objective was to understand customer preferences, behaviors, and perceptions related to Sephora's products and services. This project aimed to provide actionable data to inform marketing strategies and enhance customer experience.</p>
+                </ul>
+                    <hr class="modal-divider">
+                    <h3>Key Features:</h3>
+                <ul>
+                    <li>Survey Design: Developed a structured survey with a mix of quantitative and qualitative questions to extract detailed customer insights. Ensured that the survey was concise, engaging, and easy to understand to maximize response rates.</li>
+                    <li>Target Audience: Identified and targeted the appropriate demographic of Sephora customers, ensuring a representative sample for reliable and relevant data. </li>
+                    <li>Data Collection: Utilized Qualtrics to distribute the survey and collect responses efficiently. Applied best practices in survey distribution to reach a broad audience and ensure a high response rate.</li>
+                    <li>Data Analysis: Analyzed the survey data to identify key trends, preferences, and customer satisfaction levels. Used the insights to understand the driving factors behind customer choices and perceptions.</li>
+                    <li>Reporting and Recommendations: Compiled the findings into a comprehensive report, highlighting critical insights and trends. Provided strategic recommendations to Sephora based on the survey results, focusing on marketing strategies, product offerings, and customer engagement initiatives.</li>
+                </ul>
+                    <hr class="modal-divider">
+                <h3>Preview:</h3>
+                <div class="image-with-caption">
+                    <p class="image-caption">Survey Image Map</p>
+                    <img class="image-with-caption"  src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/image_map.jpg" alt="Image Map">
+                    <hr class="caption-divider">
+                </div>
+                <div class="image-with-caption">
+                    <p class="image-caption">Customer Motive</p>
+                    <img class="image-with-caption"  src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/reason_to_walk.jpg" alt="Customer Motive">
+                </div>
+                <div>
+                    <hr class="modal-divider">
+                    <h3>Outcome:</h3>
+                    <ul>
+                        <p>The survey provided Sephora with deep insights into their customer base, aiding in the formulation of more targeted and effective marketing strategies. The recommendations offered were instrumental in shaping customer-centric approaches and enhancing overall customer satisfaction.</p>
+                    </ul>
+                </div>  
+            </div>  
+        </div>
+    </div>
+</body>
+</html>

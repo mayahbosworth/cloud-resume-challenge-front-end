@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300,700" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            color: #DDDEE5;
+            background-color: #cfd1d9;
+            font-family: Lora, serif;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden;
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+
+        .skill-set li:hover {
+            background: #7C8594;
+        }
+
+        h1 {
+            color: #C3C3C3;
+        }
+
+        .wrapper {
+            height: 100%;
+        }
+
+        .left {
+            background-color: #e7e9f2;
+            color: #C3C3C3;
+            border-right: 1px solid #e7e9f2;
+            float: right;
+            height: 100%;
+            margin-left: -1px;
+            min-width: 256px;
+            position: fixed;
+            width: 33.33%;
+            display: flex; /* Set the display to flex to use flexbox */
+            flex-direction: column; /* Stack flex items vertically */
+            justify-content: center; /* Center flex items vertically */
+            align-items: center; /* Center flex items horizontally */
+            text-align: center; /* Ensure text is centered within each flex item */
+            height: 100vh; /* Set the height to full viewport height to fill the entire height of the screen */
+        }
+
+        .name-hero {
+            background: #cfd1d9; 
+            width: 100%; 
+            padding: 20px; 
+            box-sizing: border-box; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+
+        }
+
+        .name-text {
+            width: 100px;
+            text-align: center; 
+            display: block; 
+            padding:30px;
+        }
+
+
+        .right {
+            float: right;
+            height: 100%;
+            position: relative;
+            width: 66.66%;
+            background-color: #cfd1d9;
+        }
+
+        .me-img {
+            background: url('https://media-exp1.licdn.com/dms/image/C4E03AQGnLq_IB_mf8Q/profile-displayphoto-shrink_400_400/0/1631022739752?e=1648684800&v=beta&t=eICUjHeH_g9GQEItmEMK1j2gCADwqfjrlccSD_5za58') no-repeat center center;
+            background-size: 100%;
+            background-position: 0px;
+            border-radius: 100%;
+            height: 150px;
+            margin: 0 auto;
+            position: relative;
+            width: 150px;
+        }
+
+        .name-hero h1 {
+            font-family: Open Sans, sans-serif;
+            font-size: 1.5em;
+            text-align: center;
+            color: #7c6c73;
+        }
+
+        .name-hero h1 em {
+            color: #7c6c73;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        .name-hero p {
+            color: #7c6c73;
+            font-size: .75em;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .name-hero .name-text {
+            margin: 0 auto;
+            width: 85%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 0;
+            color: #7c6c73;
+            border-radius: 10px;
+        }
+
+        .left .bubble {
+            background-color: #eddcdd;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin: 20px auto;
+            width: 400px;
+            text-align: center;
+        }
+
+        .bubble .navigation-bar {
+            color: #703e9a;
+            font-size: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+        }
+
+        .inner {
+            margin: 0 auto;
+            max-width: 1000px;
+            padding: 3em;
+        }
+
+        .inner h1 {
+            font-size: 1.75em;
+            color: #7c6c73;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .inner p {
+            color: #4c5068;
+            font-size: 16px;
+        }
+
+        .inner p em {
+            color:#4c5068;
+            font-style: normal;
+            font-size: 26px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .inner p em.em1 {
+            color: #4c5068;
+            font-style: normal;
+            font-size: 20px;
+            margin-left: 0;
+            padding-bottom:20px;
+            padding-left: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .inner p em.em2 {
+            color: #4c5068;
+            font-style: normal;
+            font-size: 18px;
+            margin-left: -18px;
+            padding-left: 0px;
+        }
+
+        .inner section {
+            margin: 100px auto;
+        }
+
+        .inner .section1 {
+            margin: 60px auto;
+        }
+
+        .inner .section2 {
+            margin: 30px auto;
+        }
+
+        .inner .section1 li {
+            color: #4c5068;
+            list-style-type: disc;
+            margin-top: 0;
+        }
+
+        .inner .section1 ul {
+            list-style-type: disc;
+            margin-top: 0;
+            max-width: 570px;
+            padding-left: 20px;
+        }
+
+        .inner .section2 {
+            list-style-type: disc;
+            font-size: 16px;
+            margin-top: 0;
+            max-width: 570px;
+            padding-left: 20px;
+        }
+
+        .my-custom-list li {
+            font-family: Lora, serif;
+            font-size: 16px;
+            color: #4c5068;
+            list-style-type: disc;
+            margin-top: 0;
+            max-width: 570px;
+            padding-left: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin-top: -10px;
+            max-width: 570px;
+            padding: 0;
+        }
+
+        .skill-set li {
+            background: #eddcdd;
+            border-radius: 5px;
+            color: #4c5068;
+            display: inline-block;
+            list-style: none;
+            margin: 15px 6px 0 0;
+            padding: 10px;
+            text-align: justify;
+        }
+
+        @media screen and (max-width: 48em) {
+            .right, .left {
+                float: none;
+                position: relative !important;
+                width: 100%;
+                min-height: 500px;
+            }
+            .handmade {
+                text-align: center !important;
+                margin-top: 0px !important;
+            }
+        }
+
+        @media screen and (max-width: 75em) {
+            body {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 60em) {
+            body {
+                font-size: 14px;
+            }
+        }
+        .clearfix:after {
+            content: " ";
+            visibility: hidden;
+            display: block;
+            height: 0;
+            clear: both;
+        }
+
+        .navbar {
+            background-color: #eddcdd; 
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 80px;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+
+        .navbar li {
+            display: inline;
+            margin: 0 0.5em;
+            white-space:nowrap;
+        }
+
+        .navbar a {
+            color: #703e9a; /* Match the text color */
+            text-decoration: none;
+            padding: 0 60px; /* Match the padding */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s; /* Keep transition effects consistent */
+        }
+
+        .navbar a:hover {
+            background-color: #f4eaec; /* Match the hover color */
+        }
+
+        body {
+            padding-top: 80px; /* Adjust the padding to prevent content overlap */
+        }
+
+        .profile-img {
+            width: 150px; /* Adjust as necessary */
+            height: 150px; /* Adjust as necessary */
+            border-radius: 50%; /* Optional: for round images */
+            display: block;
+            margin: 0 auto 15px; /* Centers the image and adds space below */
+        }
+
+
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic|Open+Sans:300,400,500,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Resume</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="bio.html">About Me</a></li>
+        </ul>
+    </div>
+    <div class="wrapper clearfix">
+        <div class="left">
+            <div class="bubble">
+                <div class="navigation-bar">My Cloud Resume Challenge!</div>
+                    <div class="name-hero">
+                        <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/profile_photo_clean.png" alt="Mayah Bosworth" class="profile-img">
+                        <div class="name-text">
+                            <h1>Mayah Bosworth</h1>
+                            <p>Playa Vista Los Angeles, CA 90045 & Irvine, CA 92602</p>
+                            <p><a href="https://www.linkedin.com/in/mayah-bosworth" target="_blank" style="color: #7c6c73;">LinkedIn</a></p>
+                            <p>mayahbosworth@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="inner">
+                <section>
+                    <section class="section1">
+                        <h1>Professional Experience </h1>
+                        <p> <em>Haven Project </em> </p>
+                        <p> <em class="em1">Data Engineer | Westchester, CA | Sept 2023 - Present </em> </p>
+                        <ul>
+                            <li> <p>Implement machine learning and advanced data extraction techniques </p> </li>
+                            <li> <p>Streamline analyzing bid documents, significantly enhancing efficiency and user decision-making </p> </li>
+                            <li> <p>Implement data quality assurance measures </p> </li>
+                            <li> <p>Ensure accuracy / reliability of information in bid documents </p> </li>
+                        </ul>
+                    </section>
+                    <section class="section1">
+                        <p> <em>Strike Magazine LA </em> </p>
+                        <p> <em class = "em1">Director of Marketing, Website Coordinator | Westchester, CA | Sept 2023 - Present </em> </p>
+                        <ul>
+                            <p> <em class="em2"> Marketing Director: </em> </p>
+                            <li> Plan launch strategy involving outside businesses </li>
+                            <li> <p>Present major decisions to external director </p> </li>
+                            <li> <p>Communicate with HQ about uploads </p> </li>
+                            <p> <em class="em2"> Website Cordinator: </em> </p>
+                            <li> <p> Upload / format blog articles </p> </li>
+                            <li> <p> Create graphics for blog posts </p> </li>
+                            <li> <p>Organization and technical support for weekly online meetings </p> </li>
+                        </ul>
+                    </section>
+                    <section class="section1">
+                        <p> <em>Mavrick Artist Agency </em> </p> 
+                        <p> <em class="em1">Project Intern | Beverly Hills, CA | May 2022 - Sept 2022 </em> </p>
+                        <ul>
+                            <li> <p>Assist with IT services </p> </li>
+                            <li> <p>Lay out client’s portfolios on company website </p> </li>
+                            <li> <p>Photographing clients </p> </li>
+                            <li> <p>Develop and create marketing materials </p> </li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section class="section1">
+                        <h1>Education</h1>
+                        <p> <em>Loyola Marymount University </em> <p> 
+                        <p> <em class="em1">Information Systems and Business Analytics B.S. & Computer Science | GPA 3.7 | Westchester, CA | Aug 2020 - Present (May 2024 Expected Graduation Date) </em> </p>
+                        <ul>
+                            <li> <p>Data Visualization and GIS </p> </li>
+                            <li> <p>Network and Cloud Computing </p> </li>
+                            <li> <p>Database Management </p> </li>
+                            <li> <p>Cybersecurity </p> </li>
+                            <li> <p>Supply Chain Management </p> </li>
+                            <li> <p>Data Structures and Algorithms </p> </li>
+                            <li> <p>Business Administration </p> </li>
+                            <li> <p>Data Science </p> </li>
+                            <li> <p>Web App Development </p> </li>
+                        </ul>
+                        <ul>
+                            <section class = "section2"></section>
+                                <p> <em class="em2"> Organizations: </em> </p>
+                                <ul class="my-custom-list">
+                                    <li>Lion Investing Society | Member: Jan 2022 - Present </li>
+                                    <li>ISBA Society | Member: Jan 2022 - Present </li>
+                                    <li>Kappa Alpha Theta | Sisterhood Comittee, Member: Feb 2021 - Present </li>
+                                </ul>
+                            </section>
+                        </ul>
+                    </section>
+                    <section class="section1">
+                        <p> <em>Mater Dei High School </em> </p>
+                        <p> <em class = "em1">GPA 3.9 | Santa Ana, CA | Aug 2020 - Present (May 2024 Expected Graduation Date) </em> </p>
+                        <ul>
+                            <section class = "section2"></section>
+                                <p> <em class="em2"> Organizations: </em> </p>
+                                <ul class="my-custom-list">
+                                    <li>Slammers FC Club Soccer | Captain, Player: 2013 - 2020 </li>
+                                    <li>Mater Dei Women's Soccer | Captian, Player: 2016 - 2020</li>
+                                    <li>Gift of Soccer Club | Member: 2016 - 2020 </li>
+                                    <li>Girls Leading Others Club | Member: 2016 - 2018 </li>
+                                </ul>
+                            </section>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <h1>Technical Skills</h1>
+                    <section class="section2"></section>
+                        <ul class="skill-set">
+                            <li>Excel Certified </li>
+                            <li>ArcGIS </li>
+                            <li>Tableau </li>
+                            <li>Pandas </li>
+                            <li>Selenium </li>
+                            <li>beautifulsoup </li>
+                            <li>Git </li>
+                            <li>Python </li>
+                            <li>Java </li>
+                            <li>R Studio </li>
+                            <li>SQL </li>
+                            <li>Wireshark </li>
+                            <li>SCRUM </li>
+                            <li>Statistics </li>
+                            <li>Google Analytics </li>
+                            <li>MS Access </li>
+                            <li>Burp Suite </li>
+                            <li>Qualtrics </li>
+                            <li>AWS </li>
+                            <li>RDS Firewall </li>
+                            <li>Docker </li>
+                            <li>Linux </li>
+                            <li>Jira </li>
+                            <li>Website Development </li>
+                        </ul>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
