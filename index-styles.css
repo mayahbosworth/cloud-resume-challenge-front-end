@@ -1,0 +1,351 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    color: #DDDEE5;
+    background-color: #efefed;
+    font-family: Lora, serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.skill-set li:hover {
+    background: #98cbac;
+}
+
+h1 {
+    color: #e9e9e8;
+}
+
+.wrapper {
+    height: 100%;
+}
+
+.left {
+    background-color: #e9e9e8;
+    color: #C3C3C3;
+    border-right: 1px solid #e9e9e8;
+    float: right;
+    height: 100%;
+    margin-left: -1px;
+    min-width: 256px;
+    position: fixed;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    height: 100vh;
+}
+
+.name-hero {
+    background: #efefed; 
+    width: 100%; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px;
+}
+
+.name-text {
+    width: 100px;
+    text-align: center; 
+    display: block; 
+    padding:30px;
+}
+
+
+.right {
+    float: right;
+    height: 100%;
+    position: relative;
+    width: 66.66%;
+    background-color: #efefed;
+}
+
+.name-hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
+    text-align: center;
+    color: #005329;
+    text-transform: uppercase;
+    padding: .5px;
+}
+
+.name-hero h1 em {
+    color: #005329;
+    font-style: normal;
+    font-weight: 700;
+    padding:.5px;
+}
+
+.name-hero p {
+    color: #005329;
+    font-size: .75em;
+    line-height: 1.5;
+    text-align: center;
+    padding: .5px;
+}
+
+.name-hero .name-text {
+    margin: 0 auto;
+    width: 85%;
+    background:#98cbac;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #7c6c73;
+    border-radius: 10px;
+}
+
+.left .bubble {
+    background-color: #51aa76;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 20px auto;
+    width: 400px;
+    text-align: center;
+}
+
+.bubble .navigation-bar {
+    color: #005329;
+    font-size: 18px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 3em;
+}
+
+.inner h1 {
+    font-size: 1.75em;
+    color: #005329;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.inner p {
+    color: #005329;
+    font-size: 16px;
+}
+
+.inner p em {
+    color:#51aa76;
+    font-style: normal;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.inner p em.em1 {
+    color: #8d8e8e;
+    font-style: normal;
+    font-size: 20px;
+    margin-left: 0;
+    padding-bottom:20px;
+    padding-left: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.inner p em.em2 {
+    color: #98cbac;
+    font-style: normal;
+    font-size: 18px;
+    margin-left: -18px;
+    padding-left: 0px;
+}
+
+.inner section {
+    margin: 100px auto;
+}
+
+.inner .section1 {
+    margin: 60px auto;
+}
+
+.inner .section2 {
+    margin:30px auto;
+}
+
+.inner .section1 li {
+    color: #005329;
+    list-style-type: disc;
+    margin-top: 0;
+}
+
+.inner .section1 ul {
+    list-style-type: disc;
+    margin-top: 0;
+    max-width: 570px;
+    padding-left: 20px;
+}
+
+.inner .section2 {
+    list-style-type: disc;
+    font-size: 16px;
+    margin-top: 0;
+    max-width: 570px;
+    padding-left: 20px;
+    margin-right: 50[x];
+}
+
+.my-custom-list li {
+    font-family: Lora, serif;
+    font-size: 16px;
+    color: #005329;
+    list-style-type: disc;
+    margin-top: 0;
+    max-width: 570px;
+    padding-left: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: -10px;
+    max-width: 570px;
+    padding: 0;
+}
+
+.skill-set li {
+    background: #51aa76;
+    border-radius: 5px;
+    color: #005329;
+    display: inline-block;
+    list-style: none;
+    margin-top: 15px;
+    margin-right: 16px;
+    margin-left: 0px;
+    padding: 10px;
+    text-align: justify;
+}
+
+.navbar {
+    background-color: #51aa76; 
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 80px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 0.5em;
+    white-space: nowrap;
+}
+
+.navbar a {
+    color: #005329; 
+    text-decoration: none;
+    padding: 0 20px; 
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s; 
+}
+
+.navbar a:hover {
+    background-color: #98cbac; 
+}
+
+/* Responsive Styles for the Navigation Bar */
+@media screen and (max-width: 768px) {
+    .navbar a {
+        padding: 10px 10px; 
+        font-size: 14px; 
+    }
+
+    .navbar li {
+        margin: 0 3px; 
+    }
+}
+
+body {
+    padding-top: 80px; 
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px; 
+    border-radius: 50%; 
+    display: block;
+    margin: 0 auto 15px; 
+}
+
+.clearfix:after {
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+@media screen and (max-width: 48em) {
+    .right, .left {
+        float: none;
+        position: relative !important;
+        width: 100%;
+        min-height: 500px;
+    }
+    .handmade {
+        text-align: center !important;
+        margin-top: 0px !important;
+    }
+}
+
+@media screen and (max-width: 75em) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 60em) {
+    body {
+        font-size: 14px;
+    }
+}

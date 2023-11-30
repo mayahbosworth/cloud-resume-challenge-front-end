@@ -5,389 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            color: #DDDEE5;
-            background-color: #cfd1d9;
-            font-family: Lora, serif;
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.4;
-            text-rendering: optimizeLegibility;
-            overflow-x: hidden;
-        }
-
-        *, *:before, *:after {
-            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-        }
-
-        .skill-set li:hover {
-            background: #7C8594;
-        }
-
-        h1 {
-            color: #C3C3C3;
-        }
-
-        .wrapper {
-            height: 100%;
-        }
-
-/* TEXT STYLES */
-        
-        ul {
-            margin:15 px;
-            max-width: 570px;
-            padding-left:10px;
-            padding-right:15px;
-            padding-bottom:10px;
-        }
-
-        li {
-            list-style-type:disc;
-            margin-right:-200px;
-            margin-left: 10px;
-            margin-top:10px;
-            font-size: 16px;
-        }
-
-
-/* SKILLS */
-
-
-        @media screen and (max-width: 48em) {
-            .right, .left {
-                float: none;
-                position: relative !important;
-                width: 100%;
-                min-height: 500px;
-            }
-            .handmade {
-                text-align: center !important;
-                margin-top: 0px !important;
-            }
-        }
-
-        @media screen and (max-width: 75em) {
-            body {
-                font-size: 16px;
-            }
-        }
-
-        @media screen and (max-width: 60em) {
-            body {
-                font-size: 14px;
-            }
-        }
-        .clearfix:after {
-            content: " ";
-            visibility: hidden;
-            display: block;
-            height: 0;
-            clear: both;
-        }
-
-/* NAV BAR */
-
-        .navbar {
-            background-color: #eddcdd;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80px;
-        }
-
-        .navbar ul {
-            color: #703e9a;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s;
-            margin: 0;
-            padding:0;
-            width:100%;
-        }
-
-        .navbar li {
-            display: inline;
-            margin: 0 0.5em;
-            font-size: 18px;
-            padding:0;
-            white-space:nowrap;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        .navbar a {
-            color: #703e9a; 
-            text-decoration: none;
-            padding: 60px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s; 
-        }
-
-        .navbar a:hover {
-            background-color: #f4eaec; 
-        }
-
-        body {
-            padding-top: 80px;
-        }
-
-/* PROJECT GRID */
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px; 
-        }
-
-        .content-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            width: 100%; 
-        }
-
-        .project {
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            overflow: hidden;
-        }
-        
-        .project img {
-            width: 100%; 
-            height: auto; 
-            object-fit: cover; 
-            max-height: 200px; 
-        }
-
-        .project:hover img {
-            transform: scale(1.1);
-        }
-        .project-grid .project {
-            gap: 20px;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .project-grid .project:hover img {
-            transform: scale(1.1);
-        }
-
-        .project-grid .project img {
-            width: 100%;
-            max-width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-        }
-
-/* MODALS */
-
-        .modal .project, .modal .project img {
-            transform: none;
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            left: 0;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background-color: #eddcdd;
-            margin: 0 auto;
-            margin-top:20px;
-            margin-bottom: 20px;
-            padding:10px;
-            border: 1px solid #eddcdd;
-            width: 60%;
-            overflow-y: auto;
-            color: #eddcdd;
-            overflow-x: hidden;
-            border-radius: 20px;
-        }
-
-        .modal-content h2 {
-            color: #7c6c73;
-            font-size: 24px;
-            margin-left: 10px;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        .modal-content h3 {
-            color: #7c6c73;
-            font-size: 18px;
-            padding-bottom: 16px;
-            margin-left: 10px;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        .modal-content h4 {
-            color: #7c6c73;
-            font-size: 14px;
-            margin-left: 10px;
-            padding: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300;
-            text-transform: uppercase;
-        }
-
-        .modal-content p {
-            color: #4c5068;
-            font-size: 16px;
-            font-family: 'Lora', serif;
-            margin-right:-220px;
-            margin-left:10px;
-            padding: 0;
-        }
-        
-        .modal-content li {
-            color: #4c5068;
-            font-family: 'Lora', serif;
-            font-size: 16px;
-            margin-right:-200px;
-            margin-left: 22px;
-            padding:0;
-        }
-
-        .modal-content .indent li {
-            padding:0;
-            margin-right:-200px;
-            font-family: 'Lora', serif;
-            margin-left:38px;
-            color: #4c5068;
-        }
-
-        .modal-content .indent ul {
-            margin-right: -200px;
-            font-family: 'Lora', serif;
-            margin-left:10px;
-        }
-
-        .modal-content .indent:first-child {
-            margin-left:10px;
-            margin-right: -200px;
-        }
-
-        .modal-image-container {
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            margin:0;
-            padding: 0;
-        }
-
-        .modal-image-container img {
-            width: 100%; 
-            max-width: 100%; 
-            display: block; 
-            margin:auto;  
-            align-items: center;    
-            padding: 10px;   
-            box-sizing: border-box;
-        }
-
-        .modal-divider {
-            border: 0; 
-            height: 1px; 
-            background-color:#7a6c73; 
-            width: 100%; 
-        }
-
-        .modal-heading-link {
-            color: #7a6c73;
-            text-decoration: underline; 
-            font-weight: bold; 
-            margin:10px;
-        }
-
-        .modal:target {
-            display: block;
-        }
-
-        .image-with-caption {
-            width: 100%; 
-            box-sizing: border-box;
-            margin-right:-220px;
-            padding: 0;
-        }
-
-        .image-with-caption img {
-            width: 100%; 
-            height: auto; 
-            display: block;
-            margin: 0 auto; 
-            padding: 0;
-        }
-
-        .image-caption {
-            color: #4c5068;
-            font-family: Lora, serif;
-            font-size: 18px;
-            line-height: 1.4;
-            text-align: left;
-            border: 0; 
-            margin-right:-220px;
-            margin-left:10px;
-            padding: 0;
-        }
-
-        .caption-divider {
-            border: 0; 
-            height: 1px; 
-            background-color: #7a6c73; 
-            width: 100%; 
-        }
-
-        .close {
-            color: #ba5eaf;
-            float: right;
-            margin-right:10px;
-            font-size: 28px;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        
-        .close:hover, .close:focus {
-            color: #aaaaaa;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        
-
-    </style>
+    <link rel="stylesheet" href="portfolio-styles.css"> 
 </head>
 <body>
     <div class="navbar">
@@ -401,32 +19,32 @@
         <div class="project-grid">
             <div class="project" >
                 <a href="#modalCloudResumeChallenge">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/cloud_resume_challenge_project_cover.jpg" alt="Cloud Resume Challenge">
+                    <img src="images/cloud_resume_challenge_project_cover.jpg" alt="Cloud Resume Challenge">
                 </a>
             </div>
             <div class="project">
                 <a href="#modalTravelAgency">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/travel_agency_project_cover.jpg" alt="Travel Agency">
+                    <img src="images/travel_agency_project_cover.jpg" alt="Travel Agency">
                 </a>
             </div>
             <div class="project">
                 <a href="#modalNetworkConfig">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/network_config_project_cover.jpg" alt="Network Configuration">
+                    <img src="images/network_config_project_cover.jpg" alt="Network Configuration">
                 </a>
             </div>
             <div class="project">
                 <a href="#modalMSDatabase">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/college_student_info_db_project_cover.jpg" alt="College Information Database">
+                    <img src="images/college_student_info_db_project_cover.jpg" alt="College Information Database">
                 </a>
             </div>
             <div class="project">
                 <a href="#modalRealEstate">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/real_estate_project_cover.jpg" alt="Real Estate Data Analysis">
+                    <img src="images/real_estate_project_cover.jpg" alt="Real Estate Data Analysis">
                 </a>
             </div>
             <div class="project">
                 <a href="#modalSephoraProject">
-                    <img src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/sephora_marketing_research_project_cover.jpg" alt="Sephora Marketing Research">
+                    <img src="images/sephora_marketing_research_project_cover.jpg" alt="Sephora Marketing Research">
                 </a>
             </div>
         </div>
@@ -437,7 +55,7 @@
         <div id="modalCloudResumeChallenge" class="modal">
             <div class="modal-content">
                 <a href="#" class="close">&times;</a>
-                <h2><a href="https://mayahbosworth.com" class="modal-heading-link">Cloud Resume Challenge</a></h2> <h4><a href="https://github.com/mayahbosworth/crc-html-source-code.git" class="modal-heading-link">(HTML source code)</a></h2>
+                <h2><a href="http://mayahbosworth.com/index.html" class="modal-heading-link">Cloud Resume Challenge</a></h2> <h4><a href="https://github.com/mayahbosworth/crc-html-source-code.git" class="modal-heading-link">(HTML source code)</a></h2>
                 <hr class="modal-divider">
                 <h3>Key Skills Used:</h3>
                 <ul>
@@ -521,17 +139,17 @@
                 <h3>Preview:</h3>
                 <div class="image-with-caption">
                     <p class="image-caption">Customer Analysis</p>
-                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/customer_inquiry.jpg" alt="Customer Analysis">
+                    <img class="image-with-caption" src="images/customer_inquiry.jpg" alt="Customer Analysis">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Standard Package Insight</p>
-                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/standard_family_status.jpg" alt="Standard Analysis">
+                    <img class="image-with-caption" src = "images/standard_family_status.jpg" alt="Standard Analysis">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Deluxe Package Insight</p>
-                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/deluxe_living.jpg" alt="Standard Analysis">
+                    <img class="image-with-caption" src = "images/deluxe_living.jpg" alt="Standard Analysis">
                 </div>
                 <div>
                     <hr class="modal-divider">
@@ -593,12 +211,12 @@
                 <h3>Preview:</h3>
                 <div class="image-with-caption">
                     <p class="image-caption">Network Overview</p>
-                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/full_network_view.jpg" alt="Network Overview">
+                    <img class="image-with-caption" src="images/full_network_view.jpg" alt="Network Overview">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">DNS Resolution Aross Two Subnets</p>
-                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/dns_resolution_photo.jpg" alt="DNS Resolution">
+                    <img class="image-with-caption" src = "images/dns_resolution_photo.jpg" alt="DNS Resolution">
                 </div>
                 <div>
                     <hr class="modal-divider">
@@ -644,17 +262,17 @@
                 <h3>Preview:</h3>
                 <div class="image-with-caption">
                     <p class="image-caption">Student Information Form</p>
-                    <img class="image-with-caption" src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/student_information_form.jpg" alt="Student Info Form">
+                    <img class="image-with-caption" src="images/student_information_form.jpg" alt="Student Info Form">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Grade Entry Form</p>
-                    <img class="image-with-caption" src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/grades_entry_form.jpg" alt="Grade Entry Form">
+                    <img class="image-with-caption" src = "images/grades_entry_form.jpg" alt="Grade Entry Form">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Student Information Table</p>
-                    <img class="image-with-caption"> <img src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/student_information_table.jpg" alt="Student Info Table">
+                    <img class="image-with-caption"> <img src = "images/student_information_table.jpg" alt="Student Info Table">
                 </div>
                 <div>
                     <hr class="modal-divider">
@@ -702,12 +320,12 @@
                 <h3>Preview:</h3>
                 <div class="image-with-caption">
                     <p class="image-caption">Multi Regression</p>
-                    <img class="image-with-caption"  src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/multi_regression.jpg" alt="Multi Regression">
+                    <img class="image-with-caption"  src="images/multi_regression.jpg" alt="Multi Regression">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Pivot Table</p>
-                    <img class="image-with-caption"  src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/pivot_table.jpg" alt="Grade Entry Form">
+                    <img class="image-with-caption"  src = "images/pivot_table.jpg" alt="Grade Entry Form">
                 </div>
                 <div>
                     <hr class="modal-divider">
@@ -755,12 +373,12 @@
                 <h3>Preview:</h3>
                 <div class="image-with-caption">
                     <p class="image-caption">Survey Image Map</p>
-                    <img class="image-with-caption"  src="https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/image_map.jpg" alt="Image Map">
+                    <img class="image-with-caption"  src="images/image_map.jpg" alt="Image Map">
                     <hr class="caption-divider">
                 </div>
                 <div class="image-with-caption">
                     <p class="image-caption">Customer Motive</p>
-                    <img class="image-with-caption"  src = "https://cloud-resume-challenge-mayah-bosworth.s3.amazonaws.com/images/reason_to_walk.jpg" alt="Customer Motive">
+                    <img class="image-with-caption"  src = "images/reason_to_walk.jpg" alt="Customer Motive">
                 </div>
                 <div>
                     <hr class="modal-divider">
